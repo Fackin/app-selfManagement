@@ -1,0 +1,11 @@
+/* pages/manage/manage.wxss */
+
+.list-item {
+  height: 100rpx;
+  border-bottom: 2rpx solid #ccc;
+  line-height: 100rpx;
+  padding: 0 20rpx;
+}
+.list-item:first-child {
+  border-top: 2rpx solid #ccc;
+}

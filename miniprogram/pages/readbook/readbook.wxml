@@ -1,0 +1,13 @@
+<!--pages/readbook/readbook.wxml-->
+<view class="book-page">
+  <block wx:for="{{booklist}}" wx:key="item._id">
+    <view class="book-item" wx:if="{{item.bookDes}}">
+      <text>{{item.bookDes}}</text>
+      <text class="book-name" wx:if="{{item.bookName}}">--《{{item.bookName}}》</text>
+    </view>
+  </block>
+</view>
+
+<view class="add-btn-fix" bindtap="addBook">
+  <image src="/images/icon/edit.png"></image>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/home/home.wxml-->
+<view class="home-view">
+  <swiper class="card-box" indicator-dots="true">
+    <block wx:for="{{list}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <view class="card-item">
+          <view class="card-image"><image src="{{item.image}}"></image></view>
+          <view class="card-title"><text>{{item.title}}</text></view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

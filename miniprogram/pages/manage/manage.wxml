@@ -1,0 +1,7 @@
+<!--pages/manage/manage.wxml-->
+<view>
+  <view class="list-item" bindtap="go2Path" data-pathType="book">
+    <view>读书笔记</view>
+    <image></image>
+  </view>
+</view>

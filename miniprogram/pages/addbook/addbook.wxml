@@ -1,0 +1,12 @@
+<!--pages/addbook/addbook.wxml-->
+<view class="edit-page">
+  <form bindsubmit="bindFormSubmit">
+    <view class="edit-item">
+      <input placeholder="书名" name="bookName"></input>
+    </view>
+    <view class="edit-item">
+      <textarea placeholder="摘录" name="textarea"/>
+    </view>
+    <button form-type="submit"> 保存 </button>
+  </form>
+</view>

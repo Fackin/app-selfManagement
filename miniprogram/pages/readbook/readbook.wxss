@@ -1,0 +1,40 @@
+/* pages/readbook/readbook.wxss */
+.book-page {
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.book-item {
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  line-height: 38rpx;
+  margin-bottom: 20rpx;
+  color: #666;
+}
+/* .book-item text:first-child {
+  text-indent: 56rpx;
+} */
+.book-item text.book-name {
+  /* right: 0; */
+  /* float: right; */
+  margin-left: 60rpx;
+}
+/** 按钮 **/
+.add-btn-fix {
+  position: fixed;
+  bottom: 200rpx;
+  right: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 80rpx;
+  /* border: 2rpx solid var(--themeColor); */
+  border-radius: 60rpx;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 4rpx 4rpx rgba(0, 0, 0, 0.2);
+}
+.add-btn-fix image {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
