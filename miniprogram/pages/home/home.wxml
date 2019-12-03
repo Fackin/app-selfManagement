@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
 <view class="home-view">
-  <swiper class="card-box" indicator-dots="true">
+  <swiper class="card-box" indicator-dots="true" circular="true" indicator-active-color="#ffffff">
     <block wx:for="{{list}}" wx:key="{{item.id}}">
       <swiper-item>
         <view class="card-item">

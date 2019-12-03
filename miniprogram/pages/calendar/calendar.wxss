@@ -1,0 +1,131 @@
+.calendar_title {
+  width: 70%;
+  margin: 10rpx auto;
+  justify-content: space-between;
+  font-size: 20pt;
+  color: #666;
+  display: flex;
+}
+.calendar_title .icon image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 5rpx auto;
+  vertical-align: middle;
+}
+
+/* 日历 */
+.calendar {
+  width: 100%;
+  margin-top: 75rpx;
+  background: #fff;
+  border-bottom-right-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  padding: 0 0 20rpx;
+  font-family: FZZhunYuan-M02S;
+  position: relative;
+}
+.calendar-bg {
+  position: absolute;
+  left: 0;
+  top: 50rpx;
+  width: 100%;
+  color: #ccc;
+  font-size: 420rpx;
+  text-align: center;
+}
+.header {
+  font-size: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.header > view {
+  display: inline-block;
+  width: 14.285%;
+  color: #666;
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 20rpx 0;
+}
+.weekMark {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+.weekMark view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #69f;
+}
+.date-box {
+  font-size: 0;
+  padding: 10rpx 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.date-box > view {
+  position: relative;
+  display: inline-block;
+  width: 14.285%;
+  color: #666;
+  text-align: center;
+  vertical-align: middle;
+}
+.date-head {
+  height: 100rpx;
+  /* width: 100rpx; */
+  /* line-height: 100rpx; */
+  font-size: 12pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.date-head view:first-child {
+  /* height: 76rpx; */
+}
+.date-head view:last-child {
+  /* height: 24rpx; */
+  line-height: 24rpx;
+}
+.date-lunar {
+  font-size: 20rpx;
+}
+.nowDay .date-head {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9933;
+  margin: 0 auto;
+}
+.checkedDay .date-head {
+  width: 80rpx;
+  height: 80rpx;
+  /* line-height: 80rpx; */
+  border-radius: 50%;
+  text-align: center;
+  border: 1px solid #ff9933;
+  margin: 0 auto;
+}
+
+.calendar_setbox {
+  width: 80%;
+  line-height: 60rpx;
+  text-align: left;
+  margin: auto;
+}
+.calendar_setbox .edit-item {
+  display: flex;
+}
+textarea {
+  height: 100rpx;
+  width: 400rpx;
+  margin-top: 10rpx;
+}
+input {
+  height: 60rpx;
+  line-height: 60rpx;
+}

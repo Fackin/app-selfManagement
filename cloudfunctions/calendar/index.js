@@ -24,27 +24,33 @@ exports.main = async (event, context) => {
     }
   }
 }
+
 /**
- * 云端测试与定时触发暂时都不支持使用云调用
- * 
+ * 发送模板消息（2019-12-10 将取消小程序调用）
  * @param {*} event 
  */
 async function sendTemplateMessage(event) {
-  try {
-    const {templateId, formId, page, data, OPENID} = event;
-    const sendResult = await cloud.openapi.templateMessage.send({
-      touser: OPENID,
-      templateId,
-      formId: formId,
-      page: page,
-      data: data
-    })
-    return sendResult
-  } catch (error) {
-    console.error(error)
-    const {templateId, formId, page, data, OPENID} = event;
-    console.log(templateId, formId, page, data, OPENID);
-  }
+  const { OPENID } = cloud.getWXContext()
+  const templateId = 'GIDPSiz4SPxicWF2HPntcL7WNCojj7NM9uETuTaZ158';
+
+  const sendResult = await cloud.openapi.templateMessage.send({
+    touser: OPENID,
+    templateId,
+    formId: event.formId,
+    page: 'pages/openapi/openapi',
+    data: {
+      keyword1: {
+        value: '未名咖啡屋',
+      },
+      keyword2: {
+        value: '2019 年 1 月 1 日',
+      },
+      keyword3: {
+        value: '拿铁',
+      },
+    }
+  })
+  return sendResult
 }
 /**
  * 发送订阅消息
@@ -52,17 +58,28 @@ async function sendTemplateMessage(event) {
  */
 async function sendSubscribeMessage(event) {
   const { OPENID } = cloud.getWXContext()
-  // const templateId = 'VkZ9h-lyNOqtysm6zC0uZGYl1itJiniEs_TxRqyRsWo';
-  const {templateId, page, data} = event;
+  const templateId = 'VkZ9h-lyNOqtysm6zC0uZGYl1itJiniEs_TxRqyRsWo';
 
   const sendResult = await cloud.openapi.subscribeMessage.send({
     touser: OPENID,
     templateId,
-    page: page,
-    data: data
+    page: 'pages/calendar/calendar',
+    data: {
+      thing1: {
+        value: '安排',
+      },
+      time2: {
+        value: '2019年10月1日 15:01',
+      },
+      thing4: {
+        value: '拿铁',
+      },
+    }
   })
+  console.log(OPENID,templateId,sendResult);
   return sendResult
 }
+
 
 async function getWXACode(event) {
 

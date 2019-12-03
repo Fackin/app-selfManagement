@@ -1,7 +1,11 @@
 <!--pages/manage/manage.wxml-->
 <view>
-  <view class="list-item" bindtap="go2Path" data-pathType="book">
-    <view>读书笔记</view>
-    <image></image>
+  <view class="list-item">
+    <view bindtap="go2Path" data-pathType="book">读书笔记</view>
+    <view bindtap="go2Path" data-pathType="calendar">日历</view>
+
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+      左滑可以删除
+    </mp-slideview>
   </view>
 </view>

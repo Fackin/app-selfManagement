@@ -1,0 +1,81 @@
+<!-- 日历年月 -->
+<view class='calendar_title flex_nowrap'>
+  <view class='icon' bindtap='lastMonth'>
+    <image src='/images/icon/icon-zuofanye.png' />
+  </view>
+  <view>{{year}}年{{month}}月</view>
+  <view class='icon' bindtap='nextMonth'>
+    <image src='/images/icon/icon-youfanye.png' />
+  </view>
+</view>
+
+<!-- 日历主体 -->
+<view class='calendar'>
+  <view class="calendar-bg">{{month}}</view>
+  <view class='header'>
+    <view wx:for='{{date}}' wx:key='index' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
+      <view></view>
+    </view>
+  </view>
+
+  <view class='date-box'>
+    <block wx:for='{{dateArr}}' wx:key='index'>
+      <view class='[{{isToday == item.isToday ? "nowDay" : ""}},{{isChecked == item.isToday ? "checkedDay" : ""}}]'>
+        <view class='date-head' bindtap='setDayEvent' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
+          <view>{{item.dateNum}}</view>
+          <view class="date-lunar">{{item.lDay}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
+
+<!-- 日历设置 -->
+<view class="calendar_setbox" wx:if="{{setEvent}}">
+  <view class="edit-item"><text>日期：</text>{{theDay}}({{lunar.IMonthCn}}{{lunar.IDayCn}})</view>
+  <!-- 模板消息或订阅消息 使用云调用 即时的 
+    <form class="list" bindsubmit="submitTemplateMessageForm" report-submit>
+    <view class="edit-item">
+      <input placeholder="行程名称" name="strokeName"></input>
+    </view>
+    <view class="edit-item">
+      <textarea placeholder="备注" name="mark"/>
+    </view>
+    <button class="list-item" form-type="submit">
+      <text>发送模板消息</text>
+    </button>
+  </form>
+  <button class="list-item" bindtap="submitSubscribeMessageForm" >
+    <text>发送订阅消息</text>
+  </button> -->
+
+  <!-- 模板消息 定时任务 -->
+  <!-- 
+    <form class="list" bindsubmit="submitMessageForm" report-submit>
+    <view class="edit-item">
+        <text>行程：</text><input placeholder="行程名称" name="strokeName"></input>
+    </view>
+    <view class="edit-item">
+        <text>备注：</text><textarea placeholder="备注" name="mark"/>
+    </view>
+    <button class="list-item" form-type="submit">
+      <text>发送模板消息</text>
+    </button>
+  </form> -->
+  
+  <!-- 订阅消息 定时任务 -->
+  <view class="list">
+    <view class="edit-item">
+        <text>行程：</text>
+        <input maxlength="50" placeholder="行程名称" data-type="strokeName" bindinput="getValue" />
+    </view>
+    <view class="edit-item">
+        <text>备注：</text>
+        <textarea maxlength="50" placeholder="备注" data-type="mark" bindinput="getValue" />
+    </view>
+    <button class="list-item" bindtap="submitMessageForm2" >
+      <text>发送模板消息</text>
+    </button>
+  </view>
+</view>

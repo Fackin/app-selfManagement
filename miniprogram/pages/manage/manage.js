@@ -12,7 +12,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      slideButtons: [{
+        text: '普通',
+        src: '', // icon的路径
+      }, {
+        text: '普通',
+        extClass: 'test',
+        src: '', // icon的路径
+      }, {
+        type: 'warn',
+        text: '警示',
+        extClass: 'test',
+        src: '', // icon的路径
+      }],
+    });
   },
 
   /**
@@ -75,6 +89,14 @@ Page({
       wx.navigateTo({
         url: '/pages/readbook/readbook',
       })
+    } else if (type == 'calendar') {
+      wx.navigateTo({
+        url: '/pages/calendar/calendar',
+      })
     }
+  },
+
+  slideButtonTap(e) {
+    console.log('slide button tap', e.detail)
   }
 })
